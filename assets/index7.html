@@ -12,22 +12,20 @@
     <script src="script.js"></script>
 </body>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const addItemButton = document.getElementById('addItemButton');
-    addItemButton.addEventListener('click', function() {
-        const newItemInput = document.querySelector('#newItem');
-        const newItemText = newItemInput.value;
-        if (newItemText) {
-            const newItem = document.createElement('li');
-            newItem.textContent = newItemText;
-            const itemList = document.querySelector('#itemList');
-            itemList.appendChild(newItem);
-            newItemInput.value = '';
-        } else {
-            alert("Please enter an item.");
-        }
-    });
+const newItemInput = document.getElementById('newItem');
+const addButton = document.getElementById('addItemButton');
+const itemList = document.getElementById('itemList');
+
+addButton.addEventListener('click', () => {
+  const newItemText = newItemInput.value;
+  if (newItemText !== '') {
+    const newItem = document.createElement('li');
+    newItem.textContent = newItemText;
+    itemList.appendChild(newItem);
+    newItemInput.value = '';
+  }
 });
 
 </script>
 </html>
+
