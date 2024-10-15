@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add List Item</title>
+</head>
+<body>
+    <input type="text" id="newItem" placeholder="Add a new item" />
+    <button id="addItemButton">Add Item</button>
+    <ul id="itemList"></ul>
+    <script src="script.js"></script>
+</body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const addItemButton = document.getElementById('addItemButton');
+    addItemButton.addEventListener('click', function() {
+        const newItemInput = document.querySelector('#newItem');
+        const newItemText = newItemInput.value;
+        if (newItemText) {
+            const newItem = document.createElement('li');
+            newItem.textContent = newItemText;
+            const itemList = document.querySelector('#itemList');
+            itemList.appendChild(newItem);
+            newItemInput.value = '';
+        } else {
+            alert("Please enter an item.");
+        }
+    });
+});
+
+</script>
+</html>

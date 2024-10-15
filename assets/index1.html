@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text Example</title>
+</head>
+<body>
+    <h1 id="header">Original Text</h1>
+    <button id="changeTextButton">Change Text</button>
+    <script src="script.js"></script>
+</body>
+<script>
+ const button1=document.getElementById("changeTextButton")
+button1.addEventListener("click", ()=>{
+    document.getElementById("header").innerText="Text Changed";
+} );
+
+</script>
+</html>
